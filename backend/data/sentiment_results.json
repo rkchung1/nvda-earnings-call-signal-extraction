@@ -1,0 +1,66 @@
+[
+  {
+    "file": "nvidia-nvda-q1-2025-earnings-call-transcript",
+    "quarter": "Q1_2025",
+    "management_sentiment": "negative",
+    "management_scores": {
+      "positive": 0.475911613052281,
+      "neutral": 0.038576445918386944,
+      "negative": 0.48551193338174087
+    },
+    "qa_sentiment": "positive",
+    "qa_scores": {
+      "positive": 0.8026086620986461,
+      "neutral": 0.03438726128078997,
+      "negative": 0.1630040775053203
+    }
+  },
+  {
+    "file": "nvidia-nvda-q2-2025-earnings-call-transcript",
+    "quarter": "Q2_2025",
+    "management_sentiment": "negative",
+    "management_scores": {
+      "positive": 0.43913246877491474,
+      "neutral": 0.01598353376612067,
+      "negative": 0.5448839765973389
+    },
+    "qa_sentiment": "positive",
+    "qa_scores": {
+      "positive": 0.7494183914735913,
+      "neutral": 0.03964404279831797,
+      "negative": 0.2109375772997737
+    }
+  },
+  {
+    "file": "nvidia-nvda-q3-2025-earnings-call-transcript",
+    "quarter": "Q3_2025",
+    "management_sentiment": "negative",
+    "management_scores": {
+      "positive": 0.37848649870249484,
+      "neutral": 0.0860858288194452,
+      "negative": 0.5354276553151154
+    },
+    "qa_sentiment": "positive",
+    "qa_scores": {
+      "positive": 0.7713475976139307,
+      "neutral": 0.03525300230830908,
+      "negative": 0.19339941050857307
+    }
+  },
+  {
+    "file": "nvidia-nvda-q4-2025-earnings-call-transcript",
+    "quarter": "Q4_2025",
+    "management_sentiment": "negative",
+    "management_scores": {
+      "positive": 0.42730147958449693,
+      "neutral": 0.036015056539326906,
+      "negative": 0.5366834662044826
+    },
+    "qa_sentiment": "positive",
+    "qa_scores": {
+      "positive": 0.8289558045566082,
+      "neutral": 0.02399838112760335,
+      "negative": 0.14704581717960535
+    }
+  }
+]

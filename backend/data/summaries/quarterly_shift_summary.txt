@@ -1,0 +1,7 @@
+Here's a summary of the key cross-quarter sentiment shifts:
+
+Overall, management sentiment has been trending downward since Q1_2025, with a decline from positive to slightly negative (0.427 - 0.537). This shift is likely driven by concerns about revenue growth and profitability.
+
+In contrast, Q&A sentiment remains consistently positive across quarters, indicating that investors are generally satisfied with the company's performance and guidance. The net sentiment for Q&A has remained above 70%, suggesting a strong level of optimism among investors.
+
+The most notable divergence between management and Q&A sentiments is in Q2_2025, where management's sentiment turned negative (0.545) while investor sentiment remained positive (0.749). This disconnect may indicate that investors were more optimistic about the company's prospects than management was at the time.
