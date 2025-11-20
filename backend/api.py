@@ -21,6 +21,10 @@ SUMMARIES_DIR = os.path.join(DATA_DIR, "summaries")
 PIPELINE_STATUS_PATH = os.path.join(DATA_DIR, "pipeline_status.json")
 
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 def _set_pipeline_status(message: str, state: str = "running"):
     """
     Write a simple JSON status file so the frontend can poll and display
