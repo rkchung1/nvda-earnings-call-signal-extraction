@@ -138,9 +138,10 @@ http://localhost:5173
 You should see the NVIDIA Earnings Call Dashboard.
 
 Workflow in the UI:
-	1.	Click “Run Pipeline” to execute the full backend pipeline for new data if available (scraping/processing/inference).
-	2.	Wait for the status messages to show completion.
-	3.	Click “Reload Data” to pull updated sentiment, strategic focuses, quarterly shift data, and transcripts.
+- Last pulled data should already be displayed.
+- Click “Run Pipeline” to execute the full backend pipeline for new data if available (scraping/processing/inference).
+- Wait for the status messages to show completion.
+- Click “Reload Data” to pull updated sentiment, strategic focuses, quarterly shift data, and transcripts.
 
 ---
 
