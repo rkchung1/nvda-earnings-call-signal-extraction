@@ -2,6 +2,8 @@
 
 An end-to-end dashboard for exploring **NVIDIA (NVDA) earnings call transcripts** across quarters.
 
+Deployed at: https://nvda-earnings-call-signal-extraction-4ro7uue35.vercel.app
+
 The app:
 
 - Ingests and cleans the last four quarterly earnings call transcripts from NVIDIA.
@@ -26,7 +28,7 @@ The app:
     - Generate **strategic focuses** (short themes + summaries) for each call using an LLM.
     - Compute **quarterly shift** metrics (net sentiment by quarter, section).
     - Write results to JSON / text files under the backend data directory.
-  - Deliver:
+  - Delivers:
     - Sentiment results.
     - Strategic focuses.
     - Quarterly shift data.
