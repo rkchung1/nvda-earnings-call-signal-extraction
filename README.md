@@ -2,15 +2,16 @@
 
 An end-to-end dashboard for exploring **NVIDIA (NVDA) earnings call transcripts** across quarters.
 
-Deployed at: https://nvda-earnings-call-signal-extraction-4ro7uue35.vercel.app
+Deployed at: https://nvda-earnings-call-signal-extraction-imlnk7ebj.vercel.app
 
 The app:
 
 - Ingests and cleans the last four quarterly earnings call transcripts from NVIDIA.
 - Splits transcripts into **Management** and **Q&A** sections.
 - Runs **sentiment analysis** per section and quarter using FinBERT.
-- Extracts **3–5 strategic focuses** per call with llama3.
-- Aggregates results into **cross-quarter sentiment trends**, stacked bar charts, heatmaps, and summaries.
+- Extracts **strategic focuses** (themes + summaries) per call with llama3.
+- Fetches weekly adjusted close stock prices per quarter.
+- Calculates quarterly percent price change and visualizes sentiment + market price with interactive Plotly charts.
 - Exposes everything through a **React + Vite** web UI with interactive Plotly charts.
 
 ---
@@ -44,7 +45,7 @@ The app:
     - **Pie charts** for sentiment breakdown (positive / neutral / negative) for Management and Q&A.
     - **Strategic focuses** list (theme + short summary).
 - “Cross-Quarter Analysis” view:
-  - **Stacked bar + line charts** of sentiment shift over multiple quarters for Management and Q&A.
+  - **Stacked bar + line charts** of sentiment shift compared with market price over multiple quarters for Management and Q&A.
   - **Heatmap-style tables** of sentiment proportions by quarter.
   - A **text summary tile** with the quarterly shift narrative.
 - A **pipeline status indicator** shows live backend messages while the pipeline runs.
@@ -89,10 +90,10 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Run the FastAPI app locally:
+From the root run the FastAPI app locally:
 
 ```bash
-uvicorn api:app --reload --port 8000
+uvicorn backend.api:app --reload --port 8000
 ```
 
 You should now have the API running at:
@@ -160,7 +161,7 @@ The exact tools may vary depending on how you configure the project, but the sta
 ### Transformers / Deep Learning
 
 - **Hugging Face Transformers** (`transformers`)  
-  - Specifically uses FinBert, a pre-trained NLP model to analyze sentiment of financial text.
+  - Specifically uses FinBERT, a pre-trained NLP model to analyze sentiment of financial text.
 - **PyTorch** (`torch`)
 
 Used to:
@@ -168,18 +169,29 @@ Used to:
 - Perform **sentiment classification** (positive / neutral / negative) on transcript chunks.
 - Optionally provide **embeddings** or other NLP features for more advanced analysis.
 
+### Market / Financial Data
+
+- **Alpha Vantage API**  
+  - Queried via `requests` to fetch **weekly adjusted close prices** for NVDA.
+  - Backend computes:
+    - Per-quarter **price time series** (weekly points within each fiscal quarter).
+    - Per-quarter **percentage price change** (from first to last week of the quarter).
+  - Results are exposed and consumed by the frontend to:
+    - Render **quarterly price charts**.
+    - Overlay **price change lines** on the quarterly sentiment shift charts.
+
 ### Classical NLP / Scraping
 
 - **Scraping and HTTP clients**
   - `playwright` – for scripted, headless browser interactions (e.g., loading dynamic transcript pages).
-  - `requests` (and/or similar libraries) – for making HTTP calls to external websites that host transcripts.
+  - `requests` (and/or similar libraries) – for making HTTP calls to external websites that host transcripts and to financial data APIs.
 
 - **HTML parsing and text processing**
   - `beautifulsoup4` – for parsing and extracting transcript text from HTML.
   - Standard Python utilities for:
     - Cleaning and normalizing text.
     - Splitting transcripts into **Management** and **Q&A** sections.
-    - Formatting intermediate and final outputs into JSON files consumed by the frontend.
+    - Formatting intermediate and final outputs into JSON files consumed by the frontend (sentiment, strategic focuses, quarterly shift, and price data).
 
 ---
 
