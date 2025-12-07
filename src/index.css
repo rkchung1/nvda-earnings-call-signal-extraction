@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* NVIDIA-inspired dark theme - professional financial dashboard */
+    --background: 0 0% 98%;
+    --foreground: 222 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 15% 20%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
+
+    /* NVIDIA Green */
+    --primary: 82 100% 36%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 222 15% 20%;
+
+    --muted: 0 0% 92%;
+    --muted-foreground: 222 15% 35%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 96%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 82 100% 36%;
+
+    --radius: 0.75rem;
+
+    /* Sentiment colors - NVIDIA themed */
+    --sentiment-positive: 210 60% 73%;  /* soft blue */
+    --sentiment-neutral: 240 3% 51%;    /* medium gray */
+    --sentiment-negative: 356 28% 59%;  /* muted reddish/mauve */
+
+    /* Chart colors */
+    --chart-positive: 210 60% 73%;
+    --chart-neutral: 240 3% 51%;
+    --chart-negative: 356 28% 59%;
+
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 82 100% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 12%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 217 33% 15%;
+    --sidebar-ring: 82 100% 36%;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 82 100% 36%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 217 33% 14%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 96%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 82 100% 36%;
+
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 82 100% 36%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 12%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 217 33% 15%;
+    --sidebar-ring: 82 100% 36%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

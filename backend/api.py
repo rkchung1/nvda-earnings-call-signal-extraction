@@ -135,6 +135,15 @@ def get_strategic_focuses():
         return json.load(f)
     
 
+@app.get("/quarterly_prices")
+def get_quarterly_prices():
+    path = os.path.join(DATA_DIR, "quarterly_prices.json")
+    if not os.path.exists(path):
+        raise HTTPException(status_code=404, detail="quarterly_prices.json not found")
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
 @app.get("/quarterly_shift")
 def get_quarterly_shift():
     path = os.path.join(DATA_DIR, "quarterly_shift.json")
